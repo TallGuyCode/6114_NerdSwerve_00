@@ -33,13 +33,13 @@ public final class Configs {
 
             turningConfig
                     .idleMode(IdleMode.kBrake)
-                    .smartCurrentLimit(20);
-            turningConfig.absoluteEncoder
+                    .smartCurrentLimit(60);
+            //turningConfig.absoluteEncoder   //not used with analog encoder
                     // Invert the turning encoder, since the output shaft rotates in the opposite
                     // direction of the steering motor in the MAXSwerve Module.
-                    .inverted(true)
-                    .positionConversionFactor(turningFactor) // radians
-                    .velocityConversionFactor(turningFactor / 60.0); // radians per second
+                    //.inverted(true)
+                    //.positionConversionFactor(turningFactor) // radians
+                    //.velocityConversionFactor(turningFactor / 60.0); // radians per second
             turningConfig.closedLoop
                     .feedbackSensor(FeedbackSensor.kAbsoluteEncoder)
                     // These are example gains you may need to them for your own robot!
