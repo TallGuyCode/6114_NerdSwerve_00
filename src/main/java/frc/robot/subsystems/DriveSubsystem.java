@@ -22,7 +22,8 @@ import frc.robot.Constants.DriveConstants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveSubsystem extends SubsystemBase {
-  // Create MAXSwerveModules
+  
+   // Create MAXSwerveModules
   //private final MAXSwerveModule m_frontLeft = new MAXSwerveModule(
       //DriveConstants.kFrontLeftDrivingCanId,
       //DriveConstants.kFrontLeftTurningCanId,
@@ -44,6 +45,7 @@ public class DriveSubsystem extends SubsystemBase {
       //DriveConstants.kRearRightDrivingCanId,
       //DriveConstants.kRearRightTurningCanId,
       //DriveConstants.kBackRightChassisAngularOffset);
+  
 
   // The gyro sensor
   private final AHRS m_gyro = new AHRS(NavXComType.kMXP_SPI);
@@ -127,8 +129,8 @@ public class DriveSubsystem extends SubsystemBase {
     SwerveDriveKinematics.desaturateWheelSpeeds(
         swerveModuleStates, DriveConstants.kMaxSpeedMetersPerSecond);
     //m_frontLeft.setDesiredState(swerveModuleStates[0]);
-    m_frontRight.setDesiredState(swerveModuleStates[1]);
-    m_rearLeft.setDesiredState(swerveModuleStates[2]);
+    m_frontRight.setDesiredState(swerveModuleStates[0]); //changed index from 1 to 0
+    m_rearLeft.setDesiredState(swerveModuleStates[1]); //changed index from 2 to 1
     //m_rearRight.setDesiredState(swerveModuleStates[3]);
   }
 
@@ -151,8 +153,8 @@ public class DriveSubsystem extends SubsystemBase {
     SwerveDriveKinematics.desaturateWheelSpeeds(
         desiredStates, DriveConstants.kMaxSpeedMetersPerSecond);
     //  m_frontLeft.setDesiredState(desiredStates[0]);
-        m_frontRight.setDesiredState(desiredStates[1]);
-        m_rearLeft.setDesiredState(desiredStates[2]);
+        m_frontRight.setDesiredState(desiredStates[0]); //changed index from 1 to 0
+        m_rearLeft.setDesiredState(desiredStates[1]); //changed index from 2 to 1
     //m_rearRight.setDesiredState(desiredStates[3]);
   }
 

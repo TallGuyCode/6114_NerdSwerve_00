@@ -38,6 +38,7 @@ public class MAXSwerveModule {
    * encoder, and PID controller. This configuration is specific to the REV
    * MAXSwerve Module built with NEOs, SPARKS MAX, and a Through Bore
    * Encoder.
+   * For NS change from Through Bore to Analog Encoder
    */
   public MAXSwerveModule(int drivingCANId, int turningCANId, int analogChannel, double chassisAngularOffset) {
     m_drivingSpark = new SparkMax(drivingCANId, MotorType.kBrushless);
